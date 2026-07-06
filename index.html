@@ -5,32 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>MOONLITREATS | Global Treat Character IP</title>
+  <meta name="description" content="MOONLITREATS is a Korean treat-inspired character IP brand where soft dessert beings move between day form and moonlit form.">
+  <title>MOONLITREATS | Korean Treat Character IP</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="site-logo" href="index.html" aria-label="MOONLITREATS home">MOONLITREATS</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
-      <span></span><span></span><span></span><span class="sr-only">메뉴 열기</span>
-    </button>
-    <nav id="site-nav" class="site-nav" data-nav>
-      <a class="is-active" href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="characters.html">CHARACTERS</a>
-      <a href="gallery.html">GALLERY</a>
-      <a href="items.html">GOODS</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand-area" href="index.html" aria-label="MOONLITREATS home">
+        <img class="brand-logo" src="assets/logo_main.png" alt="MOONLITREATS">
+      </a>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="goods.html">GOODS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark Mode로 전환" data-theme-toggle>
+          <span class="theme-orbit" aria-hidden="true">
+            <span class="theme-icon theme-sun"></span>
+            <span class="theme-icon theme-moon"></span>
+          </span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero-section" aria-labelledby="home-title">
       <div class="section-inner hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow">Global Treat Character IP</p>
-          <h1 id="hero-title">MOONLITREATS</h1>
-          <p class="lead">
-            전 세계 간식의 재료감과 질감이, 둥글고 버블감 있는 작은 존재로 돌아오는 캐릭터 IP 브랜드.
+          <p class="eyebrow" data-mode-label>Light Mode</p>
+          <h1 id="home-title">MOONLITREATS</h1>
+          <p class="lead" data-mode-copy>
+            Light Mode는 캐릭터들이 세상을 살아가는 낮의 모습입니다.
           </p>
           <div class="hero-actions" aria-label="Primary pages">
             <a class="button" href="characters.html">캐릭터 보기</a>
@@ -38,70 +46,79 @@
           </div>
         </div>
 
-        <div class="brand-preview" aria-label="MOONLITREATS brand visual preview">
-          <div class="preview-wordmark">MOONLITREATS</div>
-          <div class="preview-stage">
-            <div class="treat-being rice"><span class="face"></span></div>
-            <div class="treat-being berry"><span class="face"></span></div>
-            <div class="treat-being tea"><span class="face"></span></div>
+        <div class="hero-card" aria-label="Brand mode preview">
+          <span class="mode-chip">Day Form / Moonlit Form</span>
+          <div class="treat-orbit" aria-hidden="true">
+            <span class="treat-shape treat-rice"></span>
+            <span class="treat-shape treat-berry"></span>
+            <span class="treat-shape treat-tea"></span>
           </div>
-          <p>Each treat returns to its softest self under the moonlight.</p>
+          <p>간식의 모양보다 먼저 재료감, 온도, 표면의 부드러움을 캐릭터의 성격으로 번역합니다.</p>
         </div>
       </div>
     </section>
 
-    <section class="content-section compact" aria-labelledby="system-title">
-      <div class="section-inner system-strip">
-        <article>
+    <section class="content-section" aria-labelledby="system-title">
+      <div class="section-inner section-heading">
+        <p class="eyebrow">Brand System</p>
+        <h2 id="system-title">Material Before Shape</h2>
+        <p>MOONLITREATS의 기본 규칙은 겉모양보다 질감입니다. 쌀, 꿀, 차, 과일, 바삭한 공기감 같은 재료의 느낌이 캐릭터의 몸과 표정, 굿즈 적용으로 이어집니다.</p>
+      </div>
+      <div class="section-inner card-grid three">
+        <article class="info-card">
           <span>01</span>
-          <h2 id="system-title">Material Before Shape</h2>
-          <p>간식의 겉모양보다 촉감, 밀도, 온도, 표면감을 먼저 디자인합니다.</p>
+          <h3>Day Form</h3>
+          <p>낮에는 사람들과 만나고 작은 일상을 보내는 캐릭터의 모습으로 존재합니다.</p>
         </article>
-        <article>
+        <article class="info-card">
           <span>02</span>
-          <h2>Day Form</h2>
-          <p>낮에는 세상과 관계 맺는 SD 캐릭터의 모습으로 살아갑니다.</p>
+          <h3>Moonlit Form</h3>
+          <p>밤에는 가장 편안하고 재료에 가까운 형태로 돌아가 조용한 이야기를 만듭니다.</p>
         </article>
-        <article>
+        <article class="info-card">
           <span>03</span>
-          <h2>Moonlit Form</h2>
-          <p>달이 뜨면 가장 편안하고 재료에 가까운 본래의 모습으로 돌아갑니다.</p>
+          <h3>Collectible World</h3>
+          <p>스티커, 키링, 카드, 짧은 영상으로 확장하기 쉬운 단순하고 읽히는 구조를 우선합니다.</p>
         </article>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="collection-title">
-      <div class="section-inner split-section">
+    <section class="content-section color-band" aria-labelledby="pages-title">
+      <div class="section-inner split-layout">
         <div>
-          <p class="eyebrow">First Collection</p>
-          <h2 id="collection-title">Korean Treats Collection</h2>
+          <p class="eyebrow">Site Map</p>
+          <h2 id="pages-title">브랜드를 보는 다섯 개의 입구</h2>
         </div>
-        <p>
-          한국 전통 간식은 브랜드 전체의 한계가 아니라 첫 번째 컬렉션입니다.
-          쌀, 꿀, 가루, 바삭한 공기감, 맑은 차의 재료감에서 시작해 세계의 다른 디저트 컬렉션으로 확장됩니다.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section soft-section" aria-labelledby="preview-title">
-      <div class="section-inner">
-        <div class="section-heading">
-          <p class="eyebrow">Brand Preview</p>
-          <h2 id="preview-title">브랜드 자산으로 확인할 것</h2>
-        </div>
-        <div class="link-grid">
-          <a href="about.html"><span>ABOUT</span><small>브랜드 정의와 세계 규칙</small></a>
-          <a href="characters.html"><span>CHARACTERS</span><small>대표 캐릭터 후보와 두 형태</small></a>
-          <a href="gallery.html"><span>GALLERY</span><small>워드마크, 컬러, 화면 테스트</small></a>
-          <a href="items.html"><span>GOODS</span><small>스티커, 카드, 키링 적용감</small></a>
+        <div class="link-list">
+          <a href="about.html">ABOUT <small>세계관과 브랜드 규칙</small></a>
+          <a href="goods.html">GOODS <small>굿즈 적용 방향</small></a>
+          <a href="characters.html">CHARACTERS <small>캐릭터 후보와 형태</small></a>
+          <a href="gallery.html">GALLERY <small>비주얼 테스트와 기록</small></a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-logo">MOONLITREATS</div>
-    <p>A round and bubbly global treat character IP.</p>
+    <section class="footer-top">
+      <p class="footer-logo">MOONLITREATS</p>
+      <h2 class="footer-title">Every Treat Has a Story.</h2>
+      <p class="footer-message">낮에는 따뜻한 디저트,<br>밤에는 달빛 속 작은 이야기.</p>
+    </section>
+    <section class="footer-bottom">
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="about.html">ABOUT</a>
+        <a href="goods.html">GOODS</a>
+        <a href="characters.html">CHARACTERS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="index.html">HOME</a>
+      </nav>
+      <div class="footer-info">
+        <small>© 2026 MOONLITREATS</small>
+        <small>Character Brand Project</small>
+        <small>Designed & Developed by Ho De</small>
+      </div>
+    </section>
   </footer>
 
   <script src="js/main.js"></script>
