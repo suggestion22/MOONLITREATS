@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modeCopies.forEach((copy) => {
       copy.textContent = isDark
-        ? "Dark Mode는 캐릭터들이 본래의 모습으로 돌아가는 밤입니다."
-        : "Light Mode는 캐릭터들이 세상을 살아가는 낮의 모습입니다.";
+        ? "Dark Mode는 캐릭터들이 달빛 아래 본래의 모습으로 돌아가는 밤입니다."
+        : "Light Mode는 캐릭터들이 세상과 만나는 낮의 모습입니다.";
     });
   };
 

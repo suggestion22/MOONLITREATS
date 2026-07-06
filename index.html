@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="description" content="MOONLITREATS is a Korean treat-inspired character IP brand where soft dessert beings move between day form and moonlit form.">
-  <title>MOONLITREATS | Korean Treat Character IP</title>
+  <meta name="description" content="MOONLITREATS is a character IP archive for Korean treat-inspired characters, goods, stories, and visual galleries.">
+  <title>MOONLITREATS | Character IP Hub</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -18,8 +18,9 @@
       <div class="nav-links">
         <a href="index.html" aria-current="page">HOME</a>
         <a href="about.html">ABOUT</a>
-        <a href="goods.html">GOODS</a>
         <a href="characters.html">CHARACTERS</a>
+        <a href="goods.html">GOODS</a>
+        <a href="stories.html">STORIES</a>
         <a href="gallery.html">GALLERY</a>
         <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark Mode로 전환" data-theme-toggle>
           <span class="theme-orbit" aria-hidden="true">
@@ -32,68 +33,83 @@
   </header>
 
   <main>
-    <section class="hero-section" aria-labelledby="home-title">
-      <div class="section-inner hero-layout">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="hero-scene">
         <div class="hero-copy">
           <p class="eyebrow" data-mode-label>Light Mode</p>
           <h1 id="home-title">MOONLITREATS</h1>
-          <p class="lead" data-mode-copy>
-            Light Mode는 캐릭터들이 세상을 살아가는 낮의 모습입니다.
-          </p>
-          <div class="hero-actions" aria-label="Primary pages">
-            <a class="button" href="characters.html">캐릭터 보기</a>
-            <a class="button button-soft" href="about.html">세계관 보기</a>
+          <p class="lead" data-mode-copy>Light Mode는 캐릭터들이 세상을 살아가는 낮의 모습입니다.</p>
+          <div class="hero-actions" aria-label="Primary sections">
+            <a class="button" href="characters.html">캐릭터 도감</a>
+            <a class="button button-soft" href="stories.html">짧은 이야기</a>
           </div>
         </div>
 
-        <div class="hero-card" aria-label="Brand mode preview">
-          <span class="mode-chip">Day Form / Moonlit Form</span>
-          <div class="treat-orbit" aria-hidden="true">
-            <span class="treat-shape treat-rice"></span>
-            <span class="treat-shape treat-berry"></span>
-            <span class="treat-shape treat-tea"></span>
+        <div class="scene-stage" aria-label="Representative character scene">
+          <div class="image-slot hero-slot large">
+            <span>대표 캐릭터 장면</span>
+            <small>실제 캐릭터 이미지 교체 영역</small>
           </div>
-          <p>간식의 모양보다 먼저 재료감, 온도, 표면의 부드러움을 캐릭터의 성격으로 번역합니다.</p>
+          <div class="scene-mini-row" aria-hidden="true">
+            <div class="mini-orb rice"></div>
+            <div class="mini-orb honey"></div>
+            <div class="mini-orb tea"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="system-title">
-      <div class="section-inner section-heading">
-        <p class="eyebrow">Brand System</p>
-        <h2 id="system-title">Material Before Shape</h2>
-        <p>MOONLITREATS의 기본 규칙은 겉모양보다 질감입니다. 쌀, 꿀, 차, 과일, 바삭한 공기감 같은 재료의 느낌이 캐릭터의 몸과 표정, 굿즈 적용으로 이어집니다.</p>
-      </div>
-      <div class="section-inner card-grid three">
-        <article class="info-card">
-          <span>01</span>
-          <h3>Day Form</h3>
-          <p>낮에는 사람들과 만나고 작은 일상을 보내는 캐릭터의 모습으로 존재합니다.</p>
-        </article>
-        <article class="info-card">
-          <span>02</span>
-          <h3>Moonlit Form</h3>
-          <p>밤에는 가장 편안하고 재료에 가까운 형태로 돌아가 조용한 이야기를 만듭니다.</p>
-        </article>
-        <article class="info-card">
-          <span>03</span>
-          <h3>Collectible World</h3>
-          <p>스티커, 키링, 카드, 짧은 영상으로 확장하기 쉬운 단순하고 읽히는 구조를 우선합니다.</p>
-        </article>
+    <section class="hub-strip" aria-labelledby="hub-title">
+      <div class="section-inner">
+        <div class="section-heading compact">
+          <p class="eyebrow">Character IP Hub</p>
+          <h2 id="hub-title">캐릭터, 굿즈, 이야기, 갤러리로 바로 이어지는 구조</h2>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-card" href="characters.html">
+            <div class="image-slot square"><span>CHARACTER</span></div>
+            <strong>캐릭터 도감</strong>
+            <small>낮의 모습과 밤의 모습을 함께 정리합니다.</small>
+          </a>
+          <a class="hub-card" href="goods.html">
+            <div class="image-slot square"><span>GOODS</span></div>
+            <strong>굿즈 라인업</strong>
+            <small>스티커, 키링, 카드, 오브제 슬롯을 준비합니다.</small>
+          </a>
+          <a class="hub-card" href="stories.html">
+            <div class="image-slot square"><span>STORY</span></div>
+            <strong>짧은 에피소드</strong>
+            <small>4컷 만화와 작은 장면을 쌓는 공간입니다.</small>
+          </a>
+          <a class="hub-card" href="gallery.html">
+            <div class="image-slot square"><span>GALLERY</span></div>
+            <strong>비주얼 보드</strong>
+            <small>월페이퍼, SNS 컷, 제작 이미지를 모읍니다.</small>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="content-section color-band" aria-labelledby="pages-title">
+    <section class="content-section soft-band" aria-labelledby="updates-title">
       <div class="section-inner split-layout">
         <div>
-          <p class="eyebrow">Site Map</p>
-          <h2 id="pages-title">브랜드를 보는 다섯 개의 입구</h2>
+          <p class="eyebrow">Latest Preview</p>
+          <h2 id="updates-title">처음 보여줄 것은 설명보다 업데이트입니다</h2>
+          <p>홈 하단은 브랜드 철학을 길게 읽히기보다, 새 캐릭터 후보, 굿즈 테스트, 짧은 이야기 공개처럼 계속 쌓이는 IP 활동을 보여주는 영역으로 둡니다.</p>
         </div>
-        <div class="link-list">
-          <a href="about.html">ABOUT <small>세계관과 브랜드 규칙</small></a>
-          <a href="goods.html">GOODS <small>굿즈 적용 방향</small></a>
-          <a href="characters.html">CHARACTERS <small>캐릭터 후보와 형태</small></a>
-          <a href="gallery.html">GALLERY <small>비주얼 테스트와 기록</small></a>
+        <div class="update-stack">
+          <article>
+            <span>Character</span>
+            <strong>First collection silhouettes</strong>
+          </article>
+          <article>
+            <span>Goods</span>
+            <strong>Sticker and charm layout test</strong>
+          </article>
+          <article>
+            <span>Story</span>
+            <strong>A small moonlit return scene</strong>
+          </article>
         </div>
       </div>
     </section>
@@ -103,15 +119,15 @@
     <section class="footer-top">
       <p class="footer-logo">MOONLITREATS</p>
       <h2 class="footer-title">Every Treat Has a Story.</h2>
-      <p class="footer-message">낮에는 따뜻한 디저트,<br>밤에는 달빛 속 작은 이야기.</p>
+      <p class="footer-message">캐릭터가 완성되면, 이 슬롯들은 실제 이미지와 이야기로 교체됩니다.</p>
     </section>
     <section class="footer-bottom">
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="about.html">ABOUT</a>
-        <a href="goods.html">GOODS</a>
         <a href="characters.html">CHARACTERS</a>
+        <a href="goods.html">GOODS</a>
+        <a href="stories.html">STORIES</a>
         <a href="gallery.html">GALLERY</a>
-        <a href="index.html">HOME</a>
       </nav>
       <div class="footer-info">
         <small>© 2026 MOONLITREATS</small>
