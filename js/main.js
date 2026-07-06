@@ -1,36 +1,50 @@
+//  DARK/LIGHT MODE TOGGLE
+
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector("[data-menu-toggle]");
-  const nav = document.querySelector("[data-nav]");
 
-  if (!toggle || !nav) {
-    return;
-  }
+    const savedTheme =
+        localStorage.getItem("color-theme") || "light";
 
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    toggle.setAttribute("aria-expanded", "false");
-  };
+    document.documentElement.setAttribute(
+        "color-theme",
+        savedTheme
+    );
 
-  toggle.addEventListener("click", () => {
-    const isOpen = document.body.classList.toggle("menu-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
+    const toggleButton =
+        document.querySelector(".dark-light-toggle");
 
-  nav.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      closeMenu();
+    if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+
+            const currentTheme =
+                document.documentElement.getAttribute(
+                    "color-theme"
+                );
+
+            const newTheme =
+                currentTheme === "light"
+                    ? "dark"
+                    : "light";
+
+            document.documentElement.setAttribute(
+                "color-theme",
+                newTheme
+            );
+
+            localStorage.setItem(
+                "color-theme",
+                newTheme
+            );
+
+        });
     }
-  });
 
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
+    const currentYear =
+        document.querySelector("#current-year");
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 860) {
-      closeMenu();
+    if (currentYear) {
+        currentYear.textContent =
+            new Date().getFullYear();
     }
-  });
+
 });
