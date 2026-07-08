@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" role="img" aria-label="Human Form placeholder">
+  <rect width="360" height="460" rx="32" fill="#fffaf2"/>
+  <circle cx="180" cy="158" r="82" fill="#ffe890" stroke="#14284a" stroke-width="8"/>
+  <circle cx="153" cy="158" r="8" fill="#14284a"/>
+  <circle cx="207" cy="158" r="8" fill="#14284a"/>
+  <path d="M162 187c12 10 25 10 37 0" fill="none" stroke="#14284a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M99 374c16-77 49-124 81-124s65 47 81 124" fill="#ffd2e1" stroke="#14284a" stroke-width="8"/>
+  <text x="180" y="424" text-anchor="middle" fill="#7a6f65" font-family="Arial" font-size="22" font-weight="700">Human Form</text>
+</svg>

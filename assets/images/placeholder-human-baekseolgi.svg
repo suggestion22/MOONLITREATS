@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" role="img" aria-label="Baekseolgi Human Form placeholder">
+  <rect width="360" height="460" rx="32" fill="#fffaf2"/>
+  <circle cx="180" cy="154" r="86" fill="#fff2d6" stroke="#14284a" stroke-width="8"/>
+  <path d="M103 151c24-44 122-47 154 0 9-55-24-96-78-96-50 0-86 39-76 96z" fill="#ffd2e1"/>
+  <circle cx="151" cy="153" r="8" fill="#14284a"/>
+  <circle cx="209" cy="153" r="8" fill="#14284a"/>
+  <path d="M160 183c13 12 28 12 40 0" fill="none" stroke="#14284a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M91 374c15-84 52-129 89-129s75 45 89 129" fill="#bde5ff" stroke="#14284a" stroke-width="8"/>
+  <path d="M129 293c31 24 70 24 102 0" fill="none" stroke="#fffaf2" stroke-width="9" stroke-linecap="round"/>
+  <text x="180" y="424" text-anchor="middle" fill="#7a6f65" font-family="Arial" font-size="22" font-weight="700">Human Form</text>
+</svg>

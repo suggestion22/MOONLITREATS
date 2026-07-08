@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Form Comparison placeholder">
+  <rect width="640" height="480" fill="#fffaf2"/>
+  <rect x="84" y="92" width="190" height="250" rx="44" fill="#ffd2e1" stroke="#14284a" stroke-width="9"/>
+  <rect x="366" y="92" width="190" height="250" rx="70" fill="#fff2d6" stroke="#14284a" stroke-width="9"/>
+  <path d="M291 216h58" stroke="#14284a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M329 196l22 20-22 20" fill="none" stroke="#14284a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="320" y="402" text-anchor="middle" fill="#7a6f65" font-family="Arial" font-size="28" font-weight="800">FORM COMPARISON</text>
+</svg>
