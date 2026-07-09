@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Character Card placeholder">
-  <rect width="640" height="480" fill="#bde5ff"/>
-  <rect x="176" y="60" width="288" height="360" rx="28" fill="#fffaf2" stroke="#14284a" stroke-width="10"/>
-  <circle cx="320" cy="174" r="72" fill="#fff2d6" stroke="#14284a" stroke-width="8"/>
-  <rect x="226" y="282" width="188" height="20" rx="10" fill="#ffd2e1"/>
-  <rect x="226" y="324" width="132" height="18" rx="9" fill="#ffe890"/>
-  <text x="320" y="398" text-anchor="middle" fill="#14284a" font-family="Arial" font-size="24" font-weight="900">CHARACTER CARD</text>
-</svg>

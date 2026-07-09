@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Making Archive placeholder">
-  <rect width="640" height="480" fill="#fffaf2"/>
-  <path d="M130 320c60-120 170-160 332-92" fill="none" stroke="#14284a" stroke-width="12" stroke-linecap="round" stroke-dasharray="1 28"/>
-  <circle cx="178" cy="192" r="58" fill="#ffd2e1" stroke="#14284a" stroke-width="8"/>
-  <circle cx="328" cy="160" r="72" fill="#ffe890" stroke="#14284a" stroke-width="8"/>
-  <circle cx="468" cy="250" r="64" fill="#bde5ff" stroke="#14284a" stroke-width="8"/>
-  <text x="320" y="408" text-anchor="middle" fill="#7a6f65" font-family="Arial" font-size="28" font-weight="800">MAKING ARCHIVE</text>
-</svg>

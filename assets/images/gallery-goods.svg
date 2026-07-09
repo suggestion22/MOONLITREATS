@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Goods Mockup placeholder">
-  <rect width="640" height="480" fill="#fff2d6"/>
-  <rect x="100" y="128" width="150" height="210" rx="32" fill="#fffaf2" stroke="#14284a" stroke-width="9"/>
-  <circle cx="175" cy="208" r="46" fill="#ffd2e1"/>
-  <rect x="292" y="110" width="240" height="240" rx="52" fill="#bde5ff" stroke="#14284a" stroke-width="9"/>
-  <circle cx="412" cy="230" r="70" fill="#fffaf2"/>
-  <text x="320" y="416" text-anchor="middle" fill="#7a6f65" font-family="Arial" font-size="28" font-weight="800">GOODS MOCKUP</text>
-</svg>

@@ -6,9 +6,12 @@
   <title>Gallery | MOONLITREATS</title>
   <meta name="description" content="MOONLITREATS 제작 아카이브와 Form System 갤러리.">
   <link rel="icon" href="assets/images/favicon.png">
+  <script src="js/theme-init.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">본문으로 바로가기</a>
   <header class="site-header">
     <a class="brand-logo" href="index.html" aria-label="MOONLITREATS home"><img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS"></a>
     <button class="dark-light-toggle" type="button" aria-label="다크 모드/라이트 모드 전환">
@@ -19,34 +22,99 @@
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
   </div>
 </button>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
-    <nav class="site-nav" id="site-nav">
-      <a href="index.html">Home</a><a href="brand.html">Brand</a><a href="characters.html">Characters</a><a href="gallery.html" aria-current="page">Gallery</a><a href="goods-preview.html">Goods Preview</a><a href="contact.html">Channel</a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="characters.html">Characters</a><a href="gallery.html" aria-current="page">Gallery</a><a href="goods-preview.html">Goods</a><a href="contact.html">Channel</a>
     </nav>
   </header>
-  <main>
-    <section class="page-hero">
-      <p class="eyebrow">Making Archive</p>
-      <h1>MOONLITREATS의 캐릭터가 만들어지는 과정을 기록하는 아카이브</h1>
-      <p>Key Visual, Human Form, Treat Form, Form Comparison, Character Card, Making Archive, Goods Mockup을 추가하기 쉬운 grid 구조입니다.</p>
+  <main id="main-content">
+    <section class="gallery-hero" aria-labelledby="gallery-title">
+      <p class="eyebrow">Moonlit Archive</p>
+      <h1 id="gallery-title">GALLERY</h1>
+      <p>낮에는 관계와 이야기를 만드는 Human Form, 밤에는 가장 편안한 Treat Form으로 돌아가는 MOONLITREATS의 장면을 모았습니다.</p>
     </section>
-    <section class="section gallery-grid">
-      <article><img src="assets/images/gallery/seolgi-group.png" alt="Seolgi series key visual"><span>Key Visual</span></article>
-      <article><img src="assets/images/characters/baekseolgi-human.png" alt="Baekseolgi Human Form archive"><span>Human Form</span></article>
-      <article><img src="assets/images/characters/baekseolgi-treat.png" alt="Baekseolgi Treat Form archive"><span>Treat Form</span></article>
-      <article><img src="assets/images/gallery-form-comparison.svg" alt="Form Comparison placeholder"><span>Form Comparison</span></article>
-      <article><img src="assets/images/gallery-character-card.svg" alt="Character Card placeholder"><span>Character Card</span></article>
-      <article><img src="assets/images/gallery/dasik-group.png" alt="Dasik series making archive"><span>Making Archive</span></article>
-      <article><img src="assets/images/gallery-goods.svg" alt="Goods Mockup placeholder"><span>Goods Mockup</span></article>
+
+    <section class="gallery-form-showcase" aria-label="Human Form and Treat Form gallery">
+      <article class="gallery-form-card gallery-form-card-day">
+        <div class="gallery-form-copy">
+          <span>DAY</span>
+          <h2>Human Form</h2>
+          <p>익숙한 간식의 색과 질감이 캐릭터의 표정, 옷, 작은 습관으로 드러나는 시간입니다.</p>
+        </div>
+        <img src="assets/images/characters/baekseolgi-human.png" alt="백설기 Human Form" loading="lazy" decoding="async">
+      </article>
+      <article class="gallery-form-card gallery-form-card-night">
+        <div class="gallery-form-copy">
+          <span>NIGHT</span>
+          <h2>Treat Form</h2>
+          <p>밤이 오면 캐릭터는 가장 편안한 본래의 모습으로 돌아가고, 맛과 감정은 더 단순하고 선명해집니다.</p>
+        </div>
+        <img src="assets/images/characters/baekseolgi-treat.png" alt="백설기 Treat Form" loading="lazy" decoding="async">
+      </article>
+    </section>
+
+    <section class="gallery-world-note" aria-label="MOONLITREATS world notes">
+      <article>
+        <span>01</span>
+        <strong>Material</strong>
+        <p>재료의 색, 알갱이, 결이 먼저 보이고 캐릭터의 분위기로 이어집니다.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <strong>Form</strong>
+        <p>Human Form과 Treat Form은 같은 캐릭터의 낮과 밤을 나누는 기준입니다.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <strong>Scene</strong>
+        <p>카드, 굿즈, 짧은 애니메이션으로 자연스럽게 확장되는 장면을 기록합니다.</p>
+      </article>
+    </section>
+
+    <section class="gallery-archive" aria-labelledby="archive-title">
+      <div class="section-heading">
+        <p class="eyebrow">Collected Scenes</p>
+        <h2 id="archive-title">Archive</h2>
+      </div>
+      <div class="gallery-grid">
+        <article class="gallery-feature-card">
+          <img src="assets/images/gallery/seolgi-group.png" alt="설기 시리즈 키비주얼" loading="lazy" decoding="async">
+          <span>Seolgi Series</span>
+        </article>
+        <article>
+          <img src="assets/images/characters/cards/baekseolgi-2d.png" alt="백설기 카드 아트" loading="lazy" decoding="async">
+          <span>Baekseolgi Card</span>
+        </article>
+        <article>
+          <img src="assets/images/characters/cards/ssukseolgi-2d.png" alt="쑥설기 카드 아트" loading="lazy" decoding="async">
+          <span>Ssukseolgi Card</span>
+        </article>
+        <article>
+          <img src="assets/images/characters/cards/hobakseolgi-2d.png" alt="호박설기 카드 아트" loading="lazy" decoding="async">
+          <span>Hobakseolgi Card</span>
+        </article>
+        <article>
+          <img src="assets/images/characters/cards/kongseolgi-2d.png" alt="콩설기 카드 아트" loading="lazy" decoding="async">
+          <span>Kongseolgi Card</span>
+        </article>
+        <article>
+          <img src="assets/images/characters/cards/rainbow-seolgi-2d.png" alt="무지개설기 카드 아트" loading="lazy" decoding="async">
+          <span>Rainbow Seolgi Card</span>
+        </article>
+        <article class="gallery-feature-card">
+          <img src="assets/images/gallery/dasik-group.png" alt="다식 시리즈 아카이브" loading="lazy" decoding="async">
+          <span>Dasik Archive</span>
+        </article>
+      </div>
     </section>
   </main>
   <footer class="site-footer">
   <div class="footer-upper">
     <div class="container footer-upper-inner">
       <div class="footer-social">
-        <a href="#instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-        <a href="#www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
-        <a href="#" class="footer-social-link" aria-label="X" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
+        <a href="contact.html" class="footer-social-link" aria-label="Contact">CT</a>
       </div>
       <div class="footer-notice">
         <p>※ 본 사이트의 이미지와 콘텐츠는 MOONLITREATS 브랜드 소개를 위해 제작되었습니다.</p>
@@ -68,6 +136,5 @@
     </div>
   </div>
 </footer>
-  <script src="js/main.js"></script>
 </body>
 </html>

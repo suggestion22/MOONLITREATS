@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Channel | MOONLITREATS</title>
-  <meta name="description" content="MOONLITREATS 채널과 연락처 placeholder.">
+  <meta name="description" content="MOONLITREATS 공식 채널과 공개 예정 연락 창구.">
   <link rel="icon" href="assets/images/favicon.png">
+  <script src="js/theme-init.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">본문으로 바로가기</a>
   <header class="site-header">
     <a class="brand-logo" href="index.html" aria-label="MOONLITREATS home"><img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS"></a>
     <button class="dark-light-toggle" type="button" aria-label="다크 모드/라이트 모드 전환">
@@ -19,33 +22,30 @@
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
   </div>
 </button>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
-    <nav class="site-nav" id="site-nav">
-      <a href="index.html">Home</a><a href="brand.html">Brand</a><a href="characters.html">Characters</a><a href="gallery.html">Gallery</a><a href="goods-preview.html">Goods Preview</a><a href="contact.html" aria-current="page">Channel</a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="characters.html">Characters</a><a href="gallery.html">Gallery</a><a href="goods-preview.html">Goods</a><a href="contact.html" aria-current="page">Channel</a>
     </nav>
   </header>
-  <main>
+  <main id="main-content">
     <section class="page-hero">
       <p class="eyebrow">Channel / Contact</p>
       <h1>MOONLITREATS의 간식 캐릭터들이 만들어지고 공개되는 과정을 함께 확인해보세요.</h1>
       <p>Follow MOONLITREATS as the snack characters wake up in Human Form and Treat Form.</p>
     </section>
     <section class="section channel-grid">
-      <!-- Replace # with the official YouTube URL when the channel opens. -->
-      <a href="#" class="channel-card"><span>YouTube</span><p>Shorts, making archive, character reveals.</p><strong>Coming Soon</strong></a>
-      <!-- Replace # with the official Instagram URL when the account opens. -->
-      <a href="#" class="channel-card"><span>Instagram</span><p>Cards, stickers, form comparison posts.</p><strong>Coming Soon</strong></a>
-      <!-- Replace # with the official contact route when ready. -->
-      <a href="#" class="channel-card"><span>Contact</span><p>Collaboration and archive inquiries.</p><strong>Placeholder</strong></a>
+      <a href="https://www.youtube.com/@MOONLITREATS" class="channel-card" target="_blank" rel="noopener noreferrer"><span>YouTube</span><p>Shorts, making archive, character reveals.</p><strong>Open Channel</strong></a>
+      <a href="https://www.instagram.com/moonlitreats" class="channel-card" target="_blank" rel="noopener noreferrer"><span>Instagram</span><p>Cards, stickers, form comparison posts.</p><strong>Open Channel</strong></a>
+      <article class="channel-card" aria-label="Contact 준비 중"><span>Contact</span><p>Collaboration and archive inquiries.</p><strong>Coming Soon</strong></article>
     </section>
   </main>
   <footer class="site-footer">
   <div class="footer-upper">
     <div class="container footer-upper-inner">
       <div class="footer-social">
-        <a href="#instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-        <a href="#www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
-        <a href="#" class="footer-social-link" aria-label="X" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
+        <a href="contact.html" class="footer-social-link" aria-label="Contact">CT</a>
       </div>
       <div class="footer-notice">
         <p>※ 본 사이트의 이미지와 콘텐츠는 MOONLITREATS 브랜드 소개를 위해 제작되었습니다.</p>
@@ -67,6 +67,5 @@
     </div>
   </div>
 </footer>
-  <script src="js/main.js"></script>
 </body>
 </html>

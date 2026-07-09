@@ -9,9 +9,13 @@
   <meta property="og:description" content="간식들이 캐릭터가 된다면? Human Form과 Treat Form으로 확장되는 오리지널 간식 IP.">
   <meta property="og:image" content="assets/images/logo-primary-transparent.png">
   <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preload" as="image" href="assets/images/gallery/seolgi-group.png">
+  <script src="js/theme-init.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">본문으로 바로가기</a>
   <header class="site-header">
     <a class="brand-logo" href="index.html" aria-label="MOONLITREATS home">
       <img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS">
@@ -24,84 +28,49 @@
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
   </div>
 </button>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav" id="site-nav">
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
       <a href="index.html" aria-current="page">Home</a>
-      <a href="brand.html">Brand</a>
+      <a href="about.html">About</a>
       <a href="characters.html">Characters</a>
       <a href="gallery.html">Gallery</a>
-      <a href="goods-preview.html">Goods Preview</a>
+      <a href="goods-preview.html">Goods</a>
       <a href="contact.html">Channel</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <img class="hero-logo" src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS">
-        <p class="eyebrow">Original Snack Character IP</p>
-        <h1>간식들이 캐릭터가 된다면?</h1>
-        <p class="hero-lead">MOONLITREATS는 한국 간식에서 출발해, 모든 간식의 형태와 질감, 작은 감정을 캐릭터로 확장하는 오리지널 간식 IP 브랜드입니다.</p>
-        <div class="button-row">
-          <a class="button primary" href="characters.html">View Characters</a>
-          <a class="button secondary" href="brand.html">Explore Brand</a>
+  <main id="main-content">
+    <section class="home-hero" aria-labelledby="home-title">
+      <h1 class="sr-only" id="home-title">MOONLITREATS</h1>
+      <img class="home-hero-image" src="assets/images/gallery/seolgi-group.png" alt="MOONLITREATS Seolgi character group" fetchpriority="high" decoding="async">
+    </section>
+
+    <section class="home-slider-section" aria-label="MOONLITREATS image slide">
+      <div class="home-slider" data-slider>
+        <div class="home-slide is-active">
+          <img src="assets/images/gallery/dasik-group.png" alt="MOONLITREATS Dasik character group" loading="lazy" decoding="async">
+        </div>
+        <div class="home-slide">
+          <img src="assets/images/characters/baekseolgi-human.png" alt="Baekseolgi Human Form" loading="lazy" decoding="async">
+        </div>
+        <div class="home-slide">
+          <img src="assets/images/characters/rainbow-seolgi-treat.png" alt="Rainbow Seolgi Treat Form" loading="lazy" decoding="async">
+        </div>
+        <div class="home-slide">
+          <img src="assets/images/characters/ssukseolgi-human.png" alt="Ssukseolgi Human Form" loading="lazy" decoding="async">
         </div>
       </div>
-      <div class="hero-visual" aria-label="Human Form and Treat Form preview">
-        <div class="character-pair">
-          <figure class="form-panel human">
-            <img src="assets/images/characters/baekseolgi-human.png" alt="Baekseolgi Human Form">
-            <figcaption>Human Form</figcaption>
-          </figure>
-          <figure class="form-panel treat">
-            <img src="assets/images/characters/baekseolgi-treat.png" alt="Baekseolgi Treat Form">
-            <figcaption>Treat Form</figcaption>
-          </figure>
-        </div>
+      <div class="slider-dots" aria-hidden="true">
+        <span class="is-active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </section>
 
-    <section class="section two-column">
-      <div>
-        <p class="eyebrow">Brand Definition</p>
-        <h2>한국 간식에서 출발한 캐릭터 아카이브</h2>
-      </div>
-      <p>MOONLITREATS는 복잡한 세계관보다 캐릭터성, 질감, 형태가 먼저 보이는 브랜드입니다. 설기처럼 익숙한 한국 간식에서 시작하지만, 구조는 모든 간식으로 확장될 수 있습니다.</p>
-    </section>
-
-    <section class="section form-system">
-      <div class="section-heading">
-        <p class="eyebrow">Form System</p>
-        <h2>Human Form과 Treat Form</h2>
-      </div>
-      <div class="info-grid">
-        <article class="info-card">
-          <h3>Human Form</h3>
-          <p>낮 동안 지내는 모습. 감정, 관계, 성격을 보여주는 형태입니다.</p>
-        </article>
-        <article class="info-card">
-          <h3>Treat Form</h3>
-          <p>밤이 오면 돌아가는 본질적인 형태. 캐릭터가 가장 편안함을 느끼는 상태입니다.</p>
-        </article>
-        <article class="info-card">
-          <h3>Material First</h3>
-          <p>간식의 색감, 질감, 형태를 먼저 읽고 캐릭터의 표정과 분위기로 확장합니다.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section preview-band">
-      <div>
-        <p class="eyebrow">Archive Preview</p>
-        <h2>캐릭터 카드와 갤러리로 이어지는 첫 기록</h2>
-        <p>현재 사이트는 캐릭터 Form System, 카드 구조, 제작 아카이브, 굿즈 가능성을 정리하는 1차 공식 브랜드 사이트입니다.</p>
-      </div>
-      <a class="button primary" href="gallery.html">Open Gallery</a>
-    </section>
-
-    <section class="section news-section" aria-labelledby="news-title">
+    <section class="section home-centered news-section" aria-labelledby="news-title">
       <div class="section-heading">
         <p class="eyebrow">News</p>
         <h2 id="news-title">업데이트 기록</h2>
@@ -122,13 +91,13 @@
       </div>
     </section>
 
-    <section class="section feature-links" aria-labelledby="feature-title">
+    <section class="section home-centered feature-links" aria-labelledby="feature-title">
       <div class="section-heading">
         <p class="eyebrow">Explore</p>
         <h2 id="feature-title">브랜드 아카이브 바로가기</h2>
       </div>
       <div class="feature-link-grid">
-        <a class="feature-link-card" href="brand.html"><span>Brand</span><strong>브랜드 개념</strong><p>Form System과 MOONLITREATS의 방향을 정리합니다.</p></a>
+        <a class="feature-link-card" href="about.html"><span>About</span><strong>브랜드 소개</strong><p>MOONLITREATS의 방향과 감성을 간결하게 소개합니다.</p></a>
         <a class="feature-link-card" href="characters.html"><span>Characters</span><strong>캐릭터 카드</strong><p>설기 시리즈의 Human Form과 Treat Form을 확인합니다.</p></a>
         <a class="feature-link-card" href="gallery.html"><span>Gallery</span><strong>제작 아카이브</strong><p>키 비주얼, 비교 이미지, 제작 기록을 모읍니다.</p></a>
         <a class="feature-link-card" href="goods-preview.html"><span>Goods Preview</span><strong>확장 콘셉트</strong><p>스티커, 키링, 카드 등으로 확장되는 가능성을 봅니다.</p></a>
@@ -140,9 +109,9 @@
   <div class="footer-upper">
     <div class="container footer-upper-inner">
       <div class="footer-social">
-        <a href="#instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-        <a href="#www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
-        <a href="#" class="footer-social-link" aria-label="X" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
+        <a href="contact.html" class="footer-social-link" aria-label="Contact">CT</a>
       </div>
       <div class="footer-notice">
         <p>※ 본 사이트의 이미지와 콘텐츠는 MOONLITREATS 브랜드 소개를 위해 제작되었습니다.</p>
@@ -164,6 +133,5 @@
     </div>
   </div>
 </footer>
-  <script src="js/main.js"></script>
 </body>
 </html>
