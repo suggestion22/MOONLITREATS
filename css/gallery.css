@@ -220,3 +220,34 @@
   color: var(--color-muted);
   font-weight: 820;
 }
+
+/* Light UI/UX polish */
+.gallery-grid article {
+  position: relative;
+  isolation: isolate;
+}
+
+.gallery-grid img {
+  transition: transform 0.42s ease, filter 0.42s ease;
+}
+
+.gallery-grid article:hover img {
+  transform: scale(1.018);
+  filter: saturate(1.04) brightness(1.02);
+}
+
+.gallery-world-note article {
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.gallery-world-note article:hover {
+  transform: translateY(-2px);
+  border-color: rgba(239, 172, 200, 0.24);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-grid img,
+  .gallery-world-note article {
+    transition: none !important;
+  }
+}

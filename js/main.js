@@ -1,5 +1,6 @@
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
+const siteHeader = document.querySelector(".site-header");
 const toggleButton = document.querySelector(".dark-light-toggle");
 const currentYears = document.querySelectorAll(".current-year, #current-year");
 const homeSlides = document.querySelectorAll(".home-slide");
@@ -75,7 +76,10 @@ if (revealItems.length > 0) {
       rootMargin: "0px 0px -8% 0px"
     });
 
-    revealItems.forEach((item) => revealObserver.observe(item));
+    revealItems.forEach((item, index) => {
+      item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 45}ms`);
+      revealObserver.observe(item);
+    });
   }
 }
 
@@ -170,6 +174,15 @@ if (backToTopButton) {
       behavior: prefersReducedMotion ? "auto" : "smooth"
     });
   });
+}
+
+if (siteHeader) {
+  const setHeaderScrollState = () => {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+
+  setHeaderScrollState();
+  window.addEventListener("scroll", setHeaderScrollState, { passive: true });
 }
 
 if (homeSlides.length > 1) {

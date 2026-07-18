@@ -1469,3 +1469,101 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Light UI/UX polish */
+.site-header.is-scrolled {
+  background: color-mix(in srgb, var(--site-chrome-bg) 88%, var(--color-surface));
+  box-shadow: 0 14px 34px rgba(28, 43, 67, 0.08);
+}
+
+.reveal-item {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.home-hero-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-hero-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 10% 4% 10%;
+  height: 24%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(239, 172, 200, 0.22), transparent 68%);
+  filter: blur(18px);
+  opacity: 0.78;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-hero-image {
+  position: relative;
+  z-index: 1;
+  animation: moonlitreats-hero-float 7.5s ease-in-out infinite;
+  transform-origin: 50% 62%;
+}
+
+.home-slide.is-active img {
+  animation: moonlitreats-slide-breathe 5.6s ease-in-out both;
+}
+
+.feature-link-card,
+.goods-grid article,
+.roadmap-list article,
+.news-list article {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-link-card::after,
+.goods-grid article::after,
+.roadmap-list article::after,
+.news-list article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 44%);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  pointer-events: none;
+}
+
+.feature-link-card:hover::after,
+.goods-grid article:hover::after,
+.roadmap-list article:hover::after,
+.news-list article:hover::after {
+  opacity: 1;
+}
+
+.feature-link-card:focus-visible,
+.text-link-button:focus-visible,
+.footer-social-link:focus-visible {
+  transform: translateY(-2px);
+}
+
+@keyframes moonlitreats-hero-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.35deg);
+  }
+}
+
+@keyframes moonlitreats-slide-breathe {
+  0% {
+    transform: scale(0.992);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-image,
+  .home-slide.is-active img {
+    animation: none !important;
+  }
+}
