@@ -1,0 +1,222 @@
+/* Gallery page styles */
+
+.gallery-hero {
+  width: min(920px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 78px 0 46px;
+  text-align: center;
+}
+
+.gallery-hero h1 {
+  margin: 0 auto 22px;
+  color: var(--color-navy);
+  font-size: clamp(46px, 7vw, 78px);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.gallery-hero p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.8;
+}
+
+.gallery-world-note,
+.gallery-archive {
+  width: min(960px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.gallery-world-note {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding-bottom: 76px;
+}
+
+.gallery-world-note article {
+  display: grid;
+  gap: 8px;
+  padding: 22px 20px;
+  border-top: 2px solid color-mix(in srgb, var(--color-accent) 34%, var(--color-line));
+  text-align: center;
+}
+
+.gallery-world-note span {
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.gallery-world-note strong {
+  color: var(--color-navy);
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.gallery-world-note p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.7;
+}
+
+.gallery-archive {
+  padding-bottom: 92px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.gallery-grid article {
+  overflow: hidden;
+  min-height: 300px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  background: rgba(255, 253, 248, 0.78);
+  box-shadow: 0 10px 28px rgba(16, 37, 75, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.gallery-grid article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(246, 163, 200, 0.28);
+  box-shadow: 0 16px 36px rgba(16, 37, 75, 0.1);
+}
+
+:root[color-theme="dark"] .gallery-grid article {
+  background: rgba(23, 36, 64, 0.78);
+}
+
+.gallery-grid .gallery-feature-card {
+  grid-column: span 2;
+}
+
+.gallery-grid img,
+.gallery-archive-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: var(--color-navy);
+}
+
+.gallery-grid .gallery-feature-card img,
+.gallery-grid .gallery-feature-card .gallery-archive-placeholder {
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-grid span {
+  display: block;
+  padding: 15px 18px 18px;
+  color: var(--color-navy);
+  font-size: 13px;
+  font-weight: 950;
+  text-transform: none;
+}
+
+.gallery-archive-placeholder strong,
+.home-slide-placeholder strong {
+  max-width: 82%;
+}
+
+@media (max-width: 980px) {
+  .gallery-grid,
+  .gallery-world-note {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid .gallery-feature-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .gallery-hero,
+  .gallery-world-note,
+  .gallery-archive {
+    width: min(100% - 28px, 960px);
+  }
+  .gallery-hero {
+    padding: 54px 0 34px;
+  }
+  .gallery-hero h1 {
+    font-size: 44px;
+  }
+  .gallery-hero p:not(.eyebrow) {
+    font-size: 16px;
+  }
+  .gallery-world-note {
+    padding-bottom: 52px;
+  }
+  .gallery-grid {
+    gap: 18px;
+  }
+  .gallery-grid article {
+    min-height: 0;
+  }
+}
+
+/* Soft brand-site direction */
+.gallery-hero {
+  padding-top: 70px;
+}
+
+.gallery-hero h1 {
+  font-size: clamp(42px, 6vw, 66px);
+  font-weight: 900;
+}
+
+.gallery-world-note {
+  width: min(780px, calc(100% - 48px));
+  gap: 10px;
+  padding-bottom: 58px;
+}
+
+.gallery-world-note article {
+  border-top: 1px solid rgba(28, 43, 67, 0.08);
+  padding: 18px 16px;
+}
+
+.gallery-world-note strong {
+  font-size: 19px;
+  font-weight: 880;
+}
+
+.gallery-archive {
+  width: min(980px, calc(100% - 48px));
+}
+
+.gallery-grid {
+  gap: 18px;
+}
+
+.gallery-grid article {
+  border-color: rgba(28, 43, 67, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 254, 251, 0.5);
+  box-shadow: none;
+}
+
+.gallery-grid article:hover {
+  box-shadow: 0 14px 32px rgba(28, 43, 67, 0.07);
+}
+
+.gallery-grid img,
+.gallery-archive-placeholder {
+  background: color-mix(in srgb, var(--color-navy) 88%, var(--color-blue));
+}
+
+.gallery-grid span {
+  color: var(--color-muted);
+  font-weight: 820;
+}

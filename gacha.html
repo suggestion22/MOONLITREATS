@@ -1,16 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | MOONLITREATS</title>
-  <meta name="description" content="MOONLITREATS 소개와 브랜드 방향.">
+  <title>Gacha | MOONLITREATS</title>
+  <meta name="description" content="MOONLITREATS 오늘의 간식 캐릭터를 가볍게 뽑아보는 가챠 페이지.">
   <link rel="icon" href="assets/images/favicon.png">
   <script src="js/theme-init.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.25/dist/lenis.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gacha.css">
   <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js" defer></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/character-data.js" defer></script>
+  <script src="js/gacha.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 바로가기</a>
@@ -32,30 +37,83 @@
     </button>
     <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
       <a href="index.html">Home</a>
-      <a href="about.html" aria-current="page">About</a>
+      <a href="about.html">About</a>
       <a href="characters.html">Characters</a>
       <a href="gallery.html">Gallery</a>
-      <a href="gacha.html">Gacha</a>
+      <a href="gacha.html" aria-current="page">Gacha</a>
       <a href="goods-preview.html">Goods</a>
     </nav>
   </header>
   <!-- /partial:site-header -->
+
   <main id="main-content">
-    <section class="page-hero about-hero">
-      <p class="eyebrow">ABOUT</p>
-      <h1>
-        <img class="about-logo" src="assets/images/logo-primary-nohalo.png" alt="MOONLITREATS">
-      </h1>
+    <section class="gacha-hero" aria-labelledby="gacha-title">
+      <p class="eyebrow">Small Play</p>
+      <h1 id="gacha-title">GACHA</h1>
+      <p>작은 캡슐을 돌려 오늘의 캐릭터를 만나보세요.</p>
     </section>
-    <section class="section about-statement" aria-label="MOONLITREATS about introduction">
-      <p>MOONLITREATS는 간식의 형태와 질감을 캐릭터로 기록하는 오리지널 IP입니다.</p>
-      <p>우리는 익숙한 한국 간식에서 출발해 작은 감정과 표정을 발견합니다.</p>
-      <p>각 캐릭터는 재료의 색감과 질감에서 출발해 관계와 이야기를 만듭니다.</p>
-      <p>브랜드의 기준은 세계관보다 먼저 보이는 재료, 색, 촉감입니다.</p>
-      <p>하나의 캐릭터는 카드, 짧은 애니메이션, 굿즈로 자연스럽게 확장됩니다.</p>
-      <p>MOONLITREATS는 간식을 바라보는 작고 다정한 상상에서 시작됩니다.</p>
+
+    <section class="gacha-stage" aria-label="MOONLITREATS character gacha machine">
+      <div class="gacha-3d-shell" data-gacha-3d-shell aria-hidden="true">
+        <div class="gacha-3d-scene" data-gacha-3d></div>
+        <span class="gacha-3d-status" data-gacha-3d-status>READY</span>
+      </div>
+
+      <div class="gacha-machine" aria-hidden="true">
+        <div class="gacha-machine-sign">MOONLITREATS</div>
+        <div class="gacha-capsule-case">
+          <span class="gacha-capsule gacha-capsule-pink"></span>
+          <span class="gacha-capsule gacha-capsule-blue"></span>
+          <span class="gacha-capsule gacha-capsule-yellow"></span>
+          <span class="gacha-capsule gacha-capsule-green"></span>
+          <span class="gacha-capsule gacha-capsule-cream"></span>
+        </div>
+        <div class="gacha-machine-body">
+          <div class="gacha-coin-row">
+            <span>MOON COIN</span>
+            <span>CARD IN</span>
+          </div>
+          <div class="gacha-knob" data-gacha-knob>
+            <span></span>
+          </div>
+          <div class="gacha-lights">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="gacha-output-window">
+            <span data-gacha-window>READY</span>
+          </div>
+          <div class="gacha-output-slot">
+            <span class="gacha-output-capsule" data-gacha-output-capsule></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gacha-control-panel">
+        <p class="eyebrow">Draw</p>
+        <h2>오늘의 캐릭터 카드</h2>
+        <p>오늘의 캐릭터 카드가 열립니다.</p>
+        <button class="gacha-draw-button" type="button" data-gacha-draw>DRAW</button>
+        <article class="gacha-result-card" data-gacha-result aria-live="polite">
+          <div class="gacha-result-placeholder image-pending archive-slot" data-gacha-image role="img" aria-label="오늘의 캐릭터 카드 티켓">
+            <span>Character Ticket</span>
+            <strong>Ready</strong>
+          </div>
+          <div>
+            <span data-gacha-mood>Ready</span>
+            <strong data-gacha-name>캡슐 대기 중</strong>
+            <p data-gacha-note>버튼을 누르면 오늘의 캐릭터가 나타납니다.</p>
+            <div class="gacha-result-tags" aria-label="오늘의 캐릭터 정보">
+              <span data-gacha-category>Character waiting</span>
+              <span data-gacha-status>Remastering</span>
+            </div>
+            <button class="gacha-copy-button" type="button" data-gacha-copy disabled>Copy Result</button>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
+
   <button class="back-to-top" type="button" aria-label="페이지 위로 이동" data-back-to-top>
     <span aria-hidden="true"></span>
   </button>

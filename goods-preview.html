@@ -4,71 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Goods Preview | MOONLITREATS</title>
-  <meta name="description" content="MOONLITREATS 굿즈 확장 가능성 프리뷰.">
+  <meta name="description" content="MOONLITREATS 굿즈 프리뷰.">
   <link rel="icon" href="assets/images/favicon.png">
   <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.25/dist/lenis.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+  <!-- partial:site-header -->
   <header class="site-header">
-    <a class="brand-logo" href="index.html" aria-label="MOONLITREATS home"><img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS"></a>
+    <a class="brand-logo" href="index.html" aria-label="MOONLITREATS home">
+      <img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS">
+    </a>
     <button class="dark-light-toggle" type="button" aria-label="다크 모드/라이트 모드 전환">
-  <div class="icon30 sun" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
-  </div>
-  <div class="icon30 moon" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-  </div>
-</button>
-    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <div class="icon30 sun" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#222222"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+      </div>
+      <div class="icon30 moon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+      </div>
+    </button>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
     <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="characters.html">Characters</a><a href="gallery.html">Gallery</a><a href="goods-preview.html" aria-current="page">Goods</a><a href="contact.html">Channel</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="characters.html">Characters</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="gacha.html">Gacha</a>
+      <a href="goods-preview.html" aria-current="page">Goods</a>
     </nav>
   </header>
+  <!-- /partial:site-header -->
   <main id="main-content">
     <section class="page-hero">
-      <p class="eyebrow">Goods Concept</p>
+      <p class="eyebrow">Small Goods</p>
       <h1>Goods Preview</h1>
-      <p>MOONLITREATS는 Treat Form과 Human Form을 활용해 스티커, 키링, 카드, 아크릴 굿즈 등으로 확장될 수 있습니다.</p>
+      <p>브랜드 무드에서 자연스럽게 이어지는 작은 굿즈 프리뷰.</p>
     </section>
     <section class="section goods-grid">
-      <article><span>Sticker</span><p>Human Form과 Treat Form을 함께 담는 작은 스티커 세트.</p><strong>Concept</strong></article>
-      <article><span>Keyring</span><p>Treat Form 실루엣을 살리는 부드러운 키링 프리뷰.</p><strong>Preview</strong></article>
-      <article><span>Character Card</span><p>Motif, texture, color keyword가 들어가는 수집형 카드.</p><strong>Coming Soon</strong></article>
-      <article><span>Acrylic Stand</span><p>Human Form 중심의 데스크 오브젝트 콘셉트.</p><strong>Preview</strong></article>
-      <article><span>Postcard</span><p>제작 아카이브와 키 비주얼을 담는 엽서 슬롯.</p><strong>Concept</strong></article>
-      <article><span>Mini Figure</span><p>Treat Form의 형태감을 작은 피규어로 확장하는 방향.</p><strong>Coming Soon</strong></article>
+      <article class="reveal-item"><small>G-01</small><span>Sticker Set</span><p>Small character stickers.</p><strong>Concept</strong></article>
+      <article class="reveal-item"><small>G-02</small><span>Snack Keyring</span><p>Soft charm preview.</p><strong>Preview</strong></article>
+      <article class="reveal-item"><small>G-03</small><span>Character Card</span><p>Collectible card format.</p><strong>Priority</strong></article>
+      <article class="reveal-item"><small>G-04</small><span>Acrylic Stand</span><p>Desk object preview.</p><strong>Preview</strong></article>
+      <article class="reveal-item"><small>G-05</small><span>Postcard</span><p>Poster-style print.</p><strong>Concept</strong></article>
+      <article class="reveal-item"><small>G-06</small><span>Mini Figure</span><p>Small character figure.</p><strong>Coming Soon</strong></article>
+    </section>
+    <section class="section goods-roadmap" aria-labelledby="goods-roadmap-title">
+      <div class="section-heading reveal-item">
+        <p class="eyebrow">Lineup</p>
+        <h2 id="goods-roadmap-title">Preview Line</h2>
+      </div>
+      <div class="roadmap-list">
+        <article class="reveal-item"><span>01</span><strong>Character Card</strong><p>First collectible format.</p></article>
+        <article class="reveal-item"><span>02</span><strong>Sticker / Postcard</strong><p>Flat visual goods.</p></article>
+        <article class="reveal-item"><span>03</span><strong>Keyring / Figure</strong><p>Small object preview.</p></article>
+      </div>
     </section>
   </main>
+  <button class="back-to-top" type="button" aria-label="페이지 위로 이동" data-back-to-top>
+    <span aria-hidden="true"></span>
+  </button>
+  <!-- partial:site-footer -->
   <footer class="site-footer">
-  <div class="footer-upper">
-    <div class="container footer-upper-inner">
-      <div class="footer-social">
-        <a href="https://www.instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-        <a href="https://www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
-        <a href="contact.html" class="footer-social-link" aria-label="Contact">CT</a>
-      </div>
-      <div class="footer-notice">
-        <p>※ 본 사이트의 이미지와 콘텐츠는 MOONLITREATS 브랜드 소개를 위해 제작되었습니다.</p>
-        <p>© <span class="current-year"></span> MOONLITREATS. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-  <div class="footer-lower">
-    <div class="container footer-lower-inner">
-      <div class="footer-brand-row">
-        <a href="index.html" class="footer-logo">
-          <img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS 홈으로 이동">
-        </a>
-        <div class="footer-legal">
-          <p>본 사이트에 포함된 이미지, 문장 및 디자인의 무단 복제와 사용을 금합니다.</p>
-          <p>Copyright © <span class="current-year"></span> MOONLITREATS. All rights reserved.</p>
+    <div class="footer-upper">
+      <div class="container footer-upper-inner">
+        <div class="footer-social">
+          <a href="https://www.instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
+          <a href="https://www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
+        </div>
+        <div class="footer-notice">
+          <p>※ MOONLITREATS 공식 캐릭터 이미지와 콘텐츠를 전시하는 공간입니다.</p>
+          <p>© <span class="current-year"></span> MOONLITREATS. All rights reserved.</p>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+    <div class="footer-lower">
+      <div class="container footer-lower-inner">
+        <div class="footer-brand-row">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS 홈으로 이동">
+          </a>
+          <div class="footer-legal">
+            <p>본 사이트에 포함된 이미지, 문장 및 디자인의 무단 복제와 사용을 금합니다.</p>
+            <p>Copyright © <span class="current-year"></span> MOONLITREATS. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- /partial:site-footer -->
 </body>
 </html>

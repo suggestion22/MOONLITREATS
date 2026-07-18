@@ -1,27 +1,32 @@
 # MOONLITREATS Site
 
-1st official static brand archive site for MOONLITREATS.
+Static brand archive site for MOONLITREATS.
 
 ## Structure
 
 - `index.html`: Home
-- `brand.html`: Brand / About
-- `characters.html`: Character cards
+- `about.html`: Brand / About
+- `characters.html`: Character card archive
 - `gallery.html`: Making archive gallery
+- `gacha.html`: Character draw
 - `goods-preview.html`: Goods concept preview
-- `contact.html`: Channel / Contact placeholders
-- `css/style.css`: Shared responsive style system
-- `js/main.js`: Mobile navigation
-- `assets/images/`: Logo, favicon, placeholder character/gallery assets
+- `css/style.css`: Shared site chrome and global responsive system
+- `css/characters.css`: Character page styles
+- `css/gallery.css`: Gallery page styles
+- `css/gacha.css`: Gacha page styles
+- `js/main.js`: Shared navigation, theme, reveal, slider, and back-to-top behavior
+- `js/character-data.js`: Shared character data
+- `js/characters.js`: Character page modal behavior
+- `js/gacha.js`: Gacha page behavior
+- `partials/`: Shared header/footer source
+- `tools/apply-partials.js`: Injects header/footer partials into every HTML file
 
-## Asset Replacement
+## Shared Partials
 
-- `assets/images/logo-primary-transparent.png` is sourced from `C:\Portfolio\MOONLITREATS\로고\moonlitreats-logo-transparent-clean.png`.
-- Seolgi character images are sourced from `C:\Portfolio\MOONLITREATS\Character\떡_시리즈\설기_시리즈`.
-- Keep the existing file paths if possible so all pages update without HTML changes.
+After changing `partials/site-header.html` or `partials/site-footer.html`, run:
 
-## Current Notes
+```bash
+node tools/apply-partials.js
+```
 
-- No dark mode or theme switcher is included.
-- The site is plain static HTML/CSS/JS and can be deployed on GitHub Pages, Netlify, Cloudflare Pages, or any static host.
-- Channel links are placeholders and should be replaced when the official YouTube, Instagram, and contact routes are confirmed.
+The HTML files remain deployable as plain static files, while the header and footer stay synchronized from one source.

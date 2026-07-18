@@ -4,74 +4,30 @@ const toggleButton = document.querySelector(".dark-light-toggle");
 const currentYears = document.querySelectorAll(".current-year, #current-year");
 const homeSlides = document.querySelectorAll(".home-slide");
 const sliderDots = document.querySelectorAll(".slider-dots span");
-const characterCards = document.querySelectorAll("[data-character]");
-const characterModal = document.querySelector("[data-character-modal]");
-const modalImage = document.querySelector("[data-modal-image]");
-const modalFormSwitch = document.querySelector("[data-modal-form-switch]");
-const modalFormOptions = document.querySelectorAll("[data-modal-form-option]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalSummary = document.querySelector("[data-modal-summary]");
-const modalCloseControls = document.querySelectorAll("[data-modal-close]");
+const backToTopButton = document.querySelector("[data-back-to-top]");
+const revealItems = document.querySelectorAll(".reveal-item");
 
-const characterDetails = {
-  baekseolgi: {
-    name: "백설기",
-    motif: "백설기",
-    humanImage: "assets/images/characters/baekseolgi-human.png",
-    treatImage: "assets/images/characters/baekseolgi-treat.png",
-    summary: "담백하고 폭신한 결을 가진 첫 번째 설기 캐릭터입니다. 낮에는 조용히 주변을 살피며 작은 감정의 변화를 먼저 알아차립니다. 밤이 오면 가장 편안한 Treat Form으로 돌아가 부드러운 숨결처럼 공간에 머뭅니다.",
-    lines: ["조용히 주변을 살피는 편입니다.", "작은 변화에도 부드럽게 반응합니다.", "밤이 오면 가장 편안한 Treat Form으로 돌아갑니다."]
-  },
-  ssukseolgi: {
-    name: "쑥설기",
-    motif: "쑥설기",
-    humanImage: "assets/images/characters/ssukseolgi-human.png",
-    treatImage: "assets/images/characters/ssukseolgi-treat.png",
-    summary: "쑥의 은은한 색감과 포근한 향을 담은 설기 캐릭터입니다. 낮에는 차분한 Human Form으로 관계의 온도를 천천히 맞추고, 밤에는 더 깊고 고요한 Treat Form이 되어 작은 위로를 남깁니다.",
-    lines: ["차분하지만 존재감이 선명합니다.", "초록빛 질감이 감정의 중심입니다.", "Treat Form에서는 더 고요하고 깊은 분위기를 가집니다."]
-  },
-  hobakseolgi: {
-    name: "호박설기",
-    motif: "호박설기",
-    humanImage: "assets/images/characters/hobakseolgi-human.png",
-    treatImage: "assets/images/characters/hobakseolgi-treat.png",
-    summary: "따뜻한 노란빛과 달큰한 결을 가진 설기 캐릭터입니다. 낮에는 밝은 기운으로 주변을 환하게 만들고, 밤에는 달큰한 Treat Form으로 차분히 돌아가 포근한 온기를 오래 남깁니다.",
-    lines: ["주변을 밝게 만드는 온기가 있습니다.", "부드러운 호박색이 성격의 중심입니다.", "밤에는 달큰한 Treat Form으로 차분히 돌아갑니다."]
-  },
-  kongseolgi: {
-    name: "콩설기",
-    motif: "콩설기",
-    humanImage: "assets/images/characters/kongseolgi-human.png",
-    treatImage: "assets/images/characters/kongseolgi-treat.png",
-    summary: "작은 콩의 리듬과 고소한 포인트를 가진 설기 캐릭터입니다. 낮에는 느리지만 흔들림 없는 태도로 자기만의 박자를 지키고, 밤에는 단단하고 고소한 Treat Form으로 조용한 존재감을 드러냅니다.",
-    lines: ["느리지만 흔들림 없는 성격입니다.", "작은 포인트를 오래 기억합니다.", "Treat Form에서는 고소하고 단단한 인상이 드러납니다."]
-  },
-  "rainbow-seolgi": {
-    name: "무지개설기",
-    motif: "무지개설기",
-    humanImage: "assets/images/characters/rainbow-seolgi-human.png",
-    treatImage: "assets/images/characters/rainbow-seolgi-treat.png",
-    summary: "층층이 쌓인 색감과 밝은 감정을 가진 설기 캐릭터입니다. 낮에는 감정을 색처럼 나누어 보여주며 유연하게 움직이고, 밤에는 Treat Form 속 층감이 더 선명해져 작은 장면에도 리듬을 만듭니다.",
-    lines: ["감정이 색처럼 겹겹이 쌓입니다.", "밝고 유연한 움직임을 가집니다.", "Treat Form에서는 층감과 색의 리듬이 더 선명해집니다."]
-  }
-};
-
-let activeCharacterId = null;
-let activeModalForm = "human";
-let lastModalTrigger = null;
-const pageTransitionMs = 500;
+let smoothScroll = null;
+const pageEnterMs = 240;
+const pageLeaveMs = 140;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (!prefersReducedMotion) {
-  document.body.classList.add("page-enter");
-  window.setTimeout(() => {
-    document.body.classList.remove("page-enter");
-  }, pageTransitionMs);
-}
+const renderImage = (element, src, alt) => {
+  if (!element || !src) return;
+  element.textContent = "";
+  element.classList.remove("image-pending", "archive-slot");
+  element.setAttribute("role", "img");
+  element.setAttribute("aria-label", alt);
+  element.removeAttribute("src");
+  element.removeAttribute("alt");
 
-window.addEventListener("pageshow", () => {
-  document.body.classList.remove("page-leaving");
-});
+  const image = document.createElement("img");
+  image.src = src;
+  image.alt = alt;
+  image.loading = "lazy";
+  image.decoding = "async";
+  element.appendChild(image);
+};
 
 const setNavOpen = (isOpen) => {
   if (!toggle || !nav) return;
@@ -88,59 +44,44 @@ const updateThemeLabel = () => {
   toggleButton.setAttribute("aria-label", nextThemeLabel);
 };
 
-const getCharacterForm = () => {
-  return document.documentElement.getAttribute("color-theme") === "dark" ? "treat" : "human";
-};
-
-const setModalFormState = (form) => {
-  if (modalFormSwitch) {
-    modalFormSwitch.setAttribute("data-active-form", form);
-  }
-
-  modalFormOptions.forEach((button) => {
-    const isActive = button.dataset.modalFormOption === form;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
+if (!prefersReducedMotion && window.Lenis) {
+  smoothScroll = new window.Lenis({
+    autoRaf: true,
+    duration: 1.05,
+    wheelMultiplier: 0.9,
+    touchMultiplier: 1.2
   });
-};
+}
 
-const renderCharacterModal = (characterId, form = activeModalForm) => {
-  const detail = characterDetails[characterId];
-  if (!detail || !modalImage || !modalTitle || !modalSummary) return;
+if (!prefersReducedMotion) {
+  document.body.classList.add("page-enter");
+  window.setTimeout(() => {
+    document.body.classList.remove("page-enter");
+  }, pageEnterMs);
+}
 
-  const imageSrc = form === "treat" ? detail.treatImage : detail.humanImage;
-  const formText = form === "treat" ? "Treat Form" : "Human Form";
+if (revealItems.length > 0) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.14,
+      rootMargin: "0px 0px -8% 0px"
+    });
 
-  modalImage.src = imageSrc;
-  modalImage.alt = `${detail.name} ${formText}`;
-  setModalFormState(form);
-  modalTitle.textContent = detail.name;
-  modalSummary.textContent = detail.summary;
-};
-
-const openCharacterModal = (characterId, trigger) => {
-  if (!characterModal || !characterDetails[characterId]) return;
-  activeCharacterId = characterId;
-  activeModalForm = getCharacterForm();
-  lastModalTrigger = trigger || null;
-  renderCharacterModal(characterId, activeModalForm);
-  characterModal.classList.add("is-open");
-  characterModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-  characterModal.querySelector(".character-modal-close")?.focus();
-};
-
-const closeCharacterModal = () => {
-  if (!characterModal || !characterModal.classList.contains("is-open")) return;
-  characterModal.classList.remove("is-open");
-  characterModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
-  activeCharacterId = null;
-  activeModalForm = "human";
-  if (lastModalTrigger) {
-    lastModalTrigger.focus();
+    revealItems.forEach((item) => revealObserver.observe(item));
   }
-};
+}
+
+window.addEventListener("pageshow", () => {
+  document.body.classList.remove("page-leaving");
+});
 
 if (toggle && nav) {
   toggle.addEventListener("click", () => {
@@ -195,7 +136,7 @@ document.addEventListener("click", (event) => {
   document.body.classList.add("page-leaving");
   window.setTimeout(() => {
     window.location.assign(targetUrl.href);
-  }, pageTransitionMs);
+  }, pageLeaveMs);
 });
 
 document.addEventListener("click", (event) => {
@@ -205,35 +146,28 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    setNavOpen(false);
-    closeCharacterModal();
-  }
+  if (event.key !== "Escape") return;
+  setNavOpen(false);
+  window.Moonlitreats?.closeCharacterModal?.();
 });
 
-if (characterCards.length > 0 && characterModal) {
-  characterCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      openCharacterModal(card.dataset.character, card);
-    });
+if (backToTopButton) {
+  const setBackToTopVisibility = () => {
+    backToTopButton.classList.toggle("is-visible", window.scrollY > 420);
+  };
 
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openCharacterModal(card.dataset.character, card);
-      }
-    });
-  });
+  setBackToTopVisibility();
+  window.addEventListener("scroll", setBackToTopVisibility, { passive: true });
 
-  modalCloseControls.forEach((control) => {
-    control.addEventListener("click", closeCharacterModal);
-  });
+  backToTopButton.addEventListener("click", () => {
+    if (smoothScroll) {
+      smoothScroll.scrollTo(0);
+      return;
+    }
 
-  modalFormOptions.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (!activeCharacterId) return;
-      activeModalForm = button.dataset.modalFormOption === "treat" ? "treat" : "human";
-      renderCharacterModal(activeCharacterId, activeModalForm);
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth"
     });
   });
 }
@@ -262,3 +196,10 @@ if (currentYears.length > 0) {
     year.textContent = new Date().getFullYear();
   });
 }
+
+window.Moonlitreats = {
+  ...(window.Moonlitreats || {}),
+  renderImage,
+  smoothScroll: () => smoothScroll,
+  prefersReducedMotion
+};
