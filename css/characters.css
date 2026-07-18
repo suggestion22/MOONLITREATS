@@ -554,6 +554,54 @@
   border-radius: 20px;
 }
 
+.character-series {
+  width: min(1040px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 34px 0 46px;
+}
+
+.character-series-heading {
+  max-width: 640px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.character-series-heading h2 {
+  margin-bottom: 8px;
+  color: var(--color-navy);
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.character-series-heading p:not(.eyebrow) {
+  margin: 0;
+  color: var(--color-muted);
+  font-weight: 760;
+}
+
+.character-series .characters-visual-grid {
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.character-series-label {
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.character-name-label {
+  color: var(--color-navy);
+  font-size: 20px;
+  font-weight: 950;
+}
+
+.character-card-info p {
+  max-width: 240px;
+  font-size: 13px;
+  font-weight: 720;
+}
+
 /* Light UI/UX polish */
 .character-image-card {
   position: relative;

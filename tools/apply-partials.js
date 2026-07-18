@@ -12,6 +12,7 @@ const activePages = new Set([
   "index.html",
   "about.html",
   "characters.html",
+  "episode.html",
   "gallery.html",
   "gacha.html",
   "goods-preview.html"

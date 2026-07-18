@@ -1,19 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOONLITREATS | Character Site</title>
-  <meta name="description" content="MOONLITREATS 공식 캐릭터 사이트.">
+  <title>MOONLITREATS | Official Brand Hub</title>
+  <meta name="description" content="달빛 아래 작은 다과회에서 만나는 간식 친구들, MOONLITREATS 공식 브랜드 허브.">
   <meta property="og:title" content="MOONLITREATS">
-  <meta property="og:description" content="MOONLITREATS 캐릭터 카드, 갤러리, 굿즈 프리뷰.">
+  <meta property="og:description" content="귀엽고 따뜻한 간식 친구들이 매일 밤 작은 다과회를 여는 브랜드.">
   <meta property="og:image" content="assets/images/home/moonlitreats-group-poster-posed-v2-02.png">
   <link rel="icon" href="assets/images/favicon.png">
   <script src="js/theme-init.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.25/dist/lenis.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/character-data.js" defer></script>
+  <script src="js/site-renderer.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 바로가기</a>
@@ -37,6 +37,7 @@
       <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="characters.html">Characters</a>
+      <a href="episode.html">Episode</a>
       <a href="gallery.html">Gallery</a>
       <a href="gacha.html">Gacha</a>
       <a href="goods-preview.html">Goods</a>
@@ -45,77 +46,33 @@
   <!-- /partial:site-header -->
 
   <main id="main-content">
-    <section class="home-hero" aria-labelledby="home-title">
-      <div class="home-hero-copy">
-        <p class="eyebrow">Character Brand</p>
-        <h1 id="home-title">MOONLITREATS</h1>
-        <p>달빛 아래 조용히 모인 간식 캐릭터 브랜드.</p>
-        <div class="hero-status-row" aria-label="현재 브랜드 상태">
-          <span>Characters</span>
-          <span>Mood Gallery</span>
-          <span>Small Goods</span>
-        </div>
-        <div class="hero-action-row">
-          <a class="text-link-button" href="characters.html">Characters</a>
-          <a class="text-link-button is-soft" href="gallery.html">Gallery</a>
-        </div>
-      </div>
-      <div class="home-hero-card">
-        <img class="home-hero-image" src="assets/images/home/moonlitreats-group-poster-posed-v2-02.png" alt="달빛이 비치는 한옥 마당에 모인 MOONLITREATS 캐릭터 단체 포스터">
-      </div>
+    <section class="home-hero renewal-hero" aria-labelledby="home-title" data-home-hero>
+      <h1 id="home-title" class="sr-only">MOONLITREATS</h1>
     </section>
 
-    <section class="home-slider-section" aria-label="MOONLITREATS teaser archive">
-      <div class="home-slider" data-slider>
-        <div class="home-slide is-active">
-          <img src="assets/images/home/moonlitreats-group-poster-posed-v2-02.png" alt="한옥 마당에서 함께 깨어난 MOONLITREATS 캐릭터 단체 포스터">
-        </div>
-        <div class="home-slide">
-          <img src="assets/images/home/moonlitreats-group-poster-posed-v2-01.png" alt="달빛 아래 다식 선반과 찻자리 주변에 배치된 MOONLITREATS 캐릭터 포스터">
-        </div>
-        <div class="home-slide">
-          <img src="assets/images/home/moonlitreats-group-poster-posed-v2-03.png" alt="문이 열린 다식방 안에 모인 MOONLITREATS 캐릭터 포스터">
-        </div>
+    <section class="section brand-stage-section" aria-labelledby="stage-title">
+      <div class="section-heading reveal-item">
+        <p class="eyebrow">Tea Party is a Stage</p>
+        <h2 id="stage-title">다과회는 캐릭터를 위한 작은 무대입니다</h2>
+        <p>배경은 조용하게, 캐릭터는 가장 크게. MOONLITREATS는 긴 설정 대신 친구들의 표정과 짧은 장면으로 기억됩니다.</p>
       </div>
-      <div class="slider-dots" aria-hidden="true">
-        <span class="is-active"></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="home-character-strip" data-home-characters aria-label="대표 캐릭터"></div>
     </section>
 
-    <section class="section home-centered news-section" aria-labelledby="news-title">
-      <div class="section-heading">
+    <section class="section home-episode-section" aria-labelledby="episode-preview-title">
+      <div class="section-heading reveal-item">
+        <p class="eyebrow">Short Episodes</p>
+        <h2 id="episode-preview-title">짧은 장면으로 만나는 밤</h2>
+      </div>
+      <div class="episode-grid is-home" data-home-episodes></div>
+    </section>
+
+    <section class="section news-section" aria-labelledby="news-title">
+      <div class="section-heading reveal-item">
         <p class="eyebrow">News</p>
         <h2 id="news-title">업데이트 기록</h2>
       </div>
-      <div class="news-list">
-        <article>
-          <time datetime="2026-07-10">2026.07.10</time>
-          <p>Character card teaser opened.</p>
-        </article>
-        <article>
-          <time datetime="2026-07-09">2026.07.09</time>
-          <p>Seolgi card lineup added.</p>
-        </article>
-        <article>
-          <time datetime="2026-07-09">2026.07.09</time>
-          <p>New logo applied.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section home-centered feature-links" aria-labelledby="feature-title">
-      <div class="section-heading">
-        <p class="eyebrow">Explore</p>
-        <h2 id="feature-title">브랜드 둘러보기</h2>
-      </div>
-      <div class="feature-link-grid">
-        <a class="feature-link-card" href="about.html"><span>About</span><strong>Logo & Mood</strong><p>로고와 무드.</p></a>
-        <a class="feature-link-card" href="characters.html"><span>Characters</span><strong>Character Mood</strong><p>캐릭터 분위기 보기.</p></a>
-        <a class="feature-link-card" href="gallery.html"><span>Gallery</span><strong>Mood Gallery</strong><p>이미지 무드 보기.</p></a>
-        <a class="feature-link-card" href="gacha.html"><span>Gacha</span><strong>Small Draw</strong><p>가볍게 뽑기.</p></a>
-      </div>
+      <div class="news-list" data-news-list></div>
     </section>
   </main>
 
@@ -124,29 +81,17 @@
   </button>
   <!-- partial:site-footer -->
   <footer class="site-footer">
-    <div class="footer-upper">
-      <div class="container footer-upper-inner">
-        <div class="footer-social">
-          <a href="https://www.instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
-          <a href="https://www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
-        </div>
-        <div class="footer-notice">
-          <p>※ MOONLITREATS 공식 캐릭터 이미지와 콘텐츠를 전시하는 공간입니다.</p>
-          <p>© <span class="current-year"></span> MOONLITREATS. All rights reserved.</p>
-        </div>
+    <div class="container footer-renewal-inner">
+      <a href="index.html" class="footer-logo" aria-label="MOONLITREATS 홈으로 이동">
+        <img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS">
+      </a>
+      <div class="footer-legal">
+        <p>달빛 아래 작은 다과회에서 만나는 간식 친구들.</p>
+        <p>Copyright © <span class="current-year"></span> MOONLITREATS. All rights reserved.</p>
       </div>
-    </div>
-    <div class="footer-lower">
-      <div class="container footer-lower-inner">
-        <div class="footer-brand-row">
-          <a href="index.html" class="footer-logo">
-            <img src="assets/images/logo-primary-transparent.png" alt="MOONLITREATS 홈으로 이동">
-          </a>
-          <div class="footer-legal">
-            <p>본 사이트에 포함된 이미지, 문장 및 디자인의 무단 복제와 사용을 금합니다.</p>
-            <p>Copyright © <span class="current-year"></span> MOONLITREATS. All rights reserved.</p>
-          </div>
-        </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/moonlitreats" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.youtube.com/@MOONLITREATS" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YT</a>
       </div>
     </div>
   </footer>

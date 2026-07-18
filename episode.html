@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gacha | MOONLITREATS</title>
-  <meta name="description" content="MOONLITREATS 오늘의 간식 캐릭터를 가볍게 뽑아보는 가챠 페이지.">
+  <title>Episode | MOONLITREATS</title>
+  <meta name="description" content="MOONLITREATS 짧은 에피소드 아카이브.">
   <link rel="icon" href="assets/images/favicon.png">
   <script src="js/theme-init.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/gacha.css">
   <script src="js/main.js" defer></script>
   <script src="js/character-data.js" defer></script>
-  <script src="js/gacha.js" defer></script>
+  <script src="js/site-renderer.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 바로가기</a>
@@ -35,80 +34,22 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="characters.html">Characters</a>
-      <a href="episode.html">Episode</a>
+      <a href="episode.html" aria-current="page">Episode</a>
       <a href="gallery.html">Gallery</a>
-      <a href="gacha.html" aria-current="page">Gacha</a>
+      <a href="gacha.html">Gacha</a>
       <a href="goods-preview.html">Goods</a>
     </nav>
   </header>
   <!-- /partial:site-header -->
 
   <main id="main-content">
-    <section class="gacha-hero" aria-labelledby="gacha-title">
-      <p class="eyebrow">Small Play</p>
-      <h1 id="gacha-title">GACHA</h1>
-      <p>작은 캡슐을 돌려 오늘의 캐릭터를 만나보세요.</p>
+    <section class="page-hero episode-hero" aria-labelledby="episode-title">
+      <p class="eyebrow">Episode</p>
+      <h1 id="episode-title">Short Stories</h1>
+      <p>MOONLITREATS는 긴 이야기를 설명하기보다, 한 장의 그림과 짧은 문장으로 캐릭터들의 밤을 보여줍니다.</p>
     </section>
 
-    <section class="gacha-stage" aria-label="MOONLITREATS character gacha machine">
-      <div class="gacha-3d-shell" data-gacha-3d-shell aria-hidden="true">
-        <div class="gacha-3d-scene" data-gacha-3d></div>
-        <span class="gacha-3d-status" data-gacha-3d-status>READY</span>
-      </div>
-
-      <div class="gacha-machine" aria-hidden="true">
-        <div class="gacha-machine-sign">MOONLITREATS</div>
-        <div class="gacha-capsule-case">
-          <span class="gacha-capsule gacha-capsule-pink"></span>
-          <span class="gacha-capsule gacha-capsule-blue"></span>
-          <span class="gacha-capsule gacha-capsule-yellow"></span>
-          <span class="gacha-capsule gacha-capsule-green"></span>
-          <span class="gacha-capsule gacha-capsule-cream"></span>
-        </div>
-        <div class="gacha-machine-body">
-          <div class="gacha-coin-row">
-            <span>MOON COIN</span>
-            <span>CARD IN</span>
-          </div>
-          <div class="gacha-knob" data-gacha-knob>
-            <span></span>
-          </div>
-          <div class="gacha-lights">
-            <span></span>
-            <span></span>
-          </div>
-          <div class="gacha-output-window">
-            <span data-gacha-window>READY</span>
-          </div>
-          <div class="gacha-output-slot">
-            <span class="gacha-output-capsule" data-gacha-output-capsule></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gacha-control-panel">
-        <p class="eyebrow">Draw</p>
-        <h2>오늘의 캐릭터 카드</h2>
-        <p>오늘의 캐릭터 카드가 열립니다.</p>
-        <button class="gacha-draw-button" type="button" data-gacha-draw>DRAW</button>
-        <article class="gacha-result-card" data-gacha-result aria-live="polite">
-          <div class="gacha-result-placeholder image-pending archive-slot" data-gacha-image role="img" aria-label="오늘의 캐릭터 카드 티켓">
-            <span>Character Ticket</span>
-            <strong>Ready</strong>
-          </div>
-          <div>
-            <span data-gacha-mood>Ready</span>
-            <strong data-gacha-name>캡슐 대기 중</strong>
-            <p data-gacha-note>버튼을 누르면 오늘의 캐릭터가 나타납니다.</p>
-            <div class="gacha-result-tags" aria-label="오늘의 캐릭터 정보">
-              <span data-gacha-category>Character waiting</span>
-              <span data-gacha-status>Remastering</span>
-            </div>
-            <button class="gacha-copy-button" type="button" data-gacha-copy disabled>Copy Result</button>
-          </div>
-        </article>
-      </div>
-    </section>
+    <section class="section episode-grid" data-episode-grid aria-label="MOONLITREATS short episodes"></section>
   </main>
 
   <button class="back-to-top" type="button" aria-label="페이지 위로 이동" data-back-to-top>

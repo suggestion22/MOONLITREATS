@@ -6,7 +6,7 @@ const currentYears = document.querySelectorAll(".current-year, #current-year");
 const homeSlides = document.querySelectorAll(".home-slide");
 const sliderDots = document.querySelectorAll(".slider-dots span");
 const backToTopButton = document.querySelector("[data-back-to-top]");
-const revealItems = document.querySelectorAll(".reveal-item");
+let revealObserver = null;
 
 let smoothScroll = null;
 const pageEnterMs = 240;
@@ -61,11 +61,20 @@ if (!prefersReducedMotion) {
   }, pageEnterMs);
 }
 
-if (revealItems.length > 0) {
+const refreshReveals = (scope = document) => {
+  const revealItems = scope.querySelectorAll(".reveal-item:not([data-reveal-bound])");
+  if (revealItems.length === 0) return;
+
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
-  } else {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    revealItems.forEach((item) => {
+      item.dataset.revealBound = "true";
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-visible");
@@ -75,13 +84,16 @@ if (revealItems.length > 0) {
       threshold: 0.14,
       rootMargin: "0px 0px -8% 0px"
     });
-
-    revealItems.forEach((item, index) => {
-      item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 45}ms`);
-      revealObserver.observe(item);
-    });
   }
-}
+
+  revealItems.forEach((item, index) => {
+    item.dataset.revealBound = "true";
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 45}ms`);
+    revealObserver.observe(item);
+  });
+};
+
+refreshReveals();
 
 window.addEventListener("pageshow", () => {
   document.body.classList.remove("page-leaving");
@@ -213,6 +225,7 @@ if (currentYears.length > 0) {
 window.Moonlitreats = {
   ...(window.Moonlitreats || {}),
   renderImage,
+  refreshReveals,
   smoothScroll: () => smoothScroll,
   prefersReducedMotion
 };
